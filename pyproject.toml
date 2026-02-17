@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oneflake"
+version = "0.1.0"
+description = "A high-performance 64-bit ID engine for distributed systems."
+readme = "README.md"
+authors = [
+  {name = "Felipe Martins Diel", email = "felipemartinsdiel@gmail.com"}
+]
+maintainers = [
+  {name = "Felipe Martins Diel", email = "felipemartinsdiel@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: C",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+license = { text = "MIT" }
+dependencies = []
+requires-python = ">= 3.8"
+
+[dependency-groups]
+dev = [
+    { include-group = "lint" },
+    { include-group = "test" },
+]
+lint = [
+    "ruff",
+]
+test = [
+    "coverage",
+    "pytest",
+    "ty",
+    "ipdb",
+]
+
+[project.urls]
+bugs = "https://github.com/felipediel/oneflake/issues"
+changelog = "https://github.com/felipediel/oneflake/blob/main/HISTORY.md"
+homepage = "https://github.com/felipediel/oneflake"
+
+[tool.ty]
+# All rules are enabled as "error" by default; no need to specify unless overriding.
+# Example override: relax a rule for the entire project (uncomment if needed).
+# rules.TY015 = "warn"  # For invalid-argument-type, warn instead of error.
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+
+[tool.ruff.lint.isort]
+section-order = [
+  "future",
+  "standard-library",
+  "third-party",
+  "first-party",
+  "testing",
+  "local-folder"
+]
+
+[tool.ruff.lint.isort.sections]
+"testing" = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/test_*.py" = ["E501"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+license-files = ["LICENSE*"]
+
+[tool.setuptools.exclude-package-data]
+oneflake = ["*.c", "*.h"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+package = true
+default-groups = ["dev"]
