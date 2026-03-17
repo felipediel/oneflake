@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "oneflake"
 version = "0.1.0"
-description = "A high-performance 64-bit ID engine for distributed systems."
+description = "A high-performance 64-bit ID generator for distributed systems."
 readme = "README.md"
 authors = [
   {name = "Felipe Martins Diel", email = "felipemartinsdiel@gmail.com"}
