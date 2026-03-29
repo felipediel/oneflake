@@ -6,6 +6,10 @@
 
 Oneflake is a high-performance **64-bit ID generator** for distributed systems. It generates globally unique, compact, time-sortable IDs with minimal overhead.
 
+## Documentation
+
+For a complete guide, advanced usage, and detailed API reference, see the [documentation](https://felipediel.github.io/oneflake/).
+
 ## Installation
 
 Install Oneflake via PyPI:
