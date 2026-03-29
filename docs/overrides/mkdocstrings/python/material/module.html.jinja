@@ -1,0 +1,9 @@
+{#- Skip only the root package docstring when autodoc targets a module and options.extra.hide_root_module_docstring is set. Child members (e.g. exception classes) still render their docstrings. -#}
+{% extends "_base/module.html.jinja" %}
+
+{% block docstring scoped %}
+  {% if root and config.extra.get("hide_root_module_docstring") %}
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock docstring %}

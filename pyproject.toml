@@ -35,8 +35,14 @@ requires-python = ">= 3.8"
 
 [dependency-groups]
 dev = [
+    { include-group = "docs" },
     { include-group = "lint" },
     { include-group = "test" },
+]
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
 ]
 lint = [
     "ruff",
