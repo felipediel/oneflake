@@ -24,14 +24,14 @@ unique_id = generator.generate()
 print(unique_id)  # e.g. 2027553873090080768
 ```
 
-## Why Oneflake
+## Features
 
-* **Globally unique identifiers** — collision-free across distributed workers and isolated nodes.
-* **High-performance C core** — optimized for ultra-fast ID generation in concurrent environments.
-* **Lock-free architecture** — atomic operations avoid mutex contention and scale efficiently across threads.
-* **Flexible ID layout** — configure the size and ordering of timestamp, worker, and sequence fields.
-* **Custom time configuration** — control epoch and timestamp precision to fit system requirements.
-* **Built-in decoding** — easily extract timestamp, worker ID, and sequence components from generated IDs.
+- **Globally unique identifiers:** collision-free across distributed workers and isolated nodes.
+- **High-performance C core:** optimized for ultra-fast ID generation in concurrent environments.
+- **Lock-free architecture:** atomic operations avoid mutex contention and scale efficiently across threads.
+- **Flexible ID layout:** configure the size and ordering of timestamp, worker, and sequence fields.
+- **Custom time configuration:** control epoch and timestamp precision to fit system requirements.
+- **Built-in decoding:** easily extract timestamp, worker ID, and sequence components from generated IDs.
 
 ## Oneflake ID Structure
 
